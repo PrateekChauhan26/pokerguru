@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "🗄️ Manual Database Setup for PokerGuru"
+echo "======================================"
+echo ""
+
+echo "📌 STEP 1: Start Postgres.app"
+echo "1. Open Finder → Applications"
+echo "2. Double-click 'Postgres.app'"
+echo "3. Click 'Start' button if not already running"
+echo ""
+
+echo "📌 STEP 2: Create pokerguru database"
+echo "Run these commands in Terminal:"
+echo ""
+echo "# Connect to PostgreSQL (try these in order):"
+echo "psql -h localhost -p 5433 -d postgres"
+echo "# OR if above fails:"
+echo "psql -p 5433 -d postgres"  
+echo "# OR if above fails:"
+echo "psql -d postgres"
+echo ""
+echo "# Create the database (copy and paste this line):"
+echo "CREATE DATABASE pokerguru;"
+echo ""
+echo "# Exit PostgreSQL:"
+echo "\\q"
+echo ""
+
+echo "📌 STEP 3: Test connection"
+echo "psql -h localhost -p 5433 -d pokerguru -c \"SELECT 'PokerGuru database is ready!' as status;\""
+echo "# OR try: psql -p 5433 -d pokerguru -c \"SELECT 'PokerGuru database is ready!' as status;\""
+echo ""
+
+echo "✅ After completing these steps, run: ./start.sh"

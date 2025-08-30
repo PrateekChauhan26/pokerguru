@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { HealthController } from './health.controller';
 import { ConfigModule } from '@nestjs/config';
 // ...existing code...
 import { IntentCheckerModule } from './modules/intent-checker/intent-checker.module';
@@ -17,5 +18,6 @@ import { ChatModule } from './modules/chat/chat.module';
     PokerQAModule,
     ChatModule,
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}

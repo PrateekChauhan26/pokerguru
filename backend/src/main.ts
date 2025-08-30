@@ -4,7 +4,13 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
+  // Log every request for debugging
+  app.use((req, res, next) => {
+    console.log(`[${req.method}] ${req.url}`);
+    next();
+  });
+
   // Enable CORS for frontend communication
   app.enableCors({
     origin: [
@@ -27,6 +33,6 @@ async function bootstrap() {
 
   const port = process.env.PORT || 8000;
   await app.listen(port, '0.0.0.0');
-  console.log(`f0cf PokerGuru Backend is running on: http://localhost:${port} or http://192.168.1.3:${port}`);
+  console.log(`\u0001f0cf PokerGuru Backend is running on: http://localhost:${port} or http://192.168.1.3:${port}`);
 }
 bootstrap();

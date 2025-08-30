@@ -13,7 +13,7 @@ async function bootstrap() {
       'http://localhost:3002',
       'http://localhost:3004',
       'http://192.168.1.3:3002',
-      'https://pokerguru-production.up.railway.app'
+      'https://pokerguru-production-87f8.up.railway.app'
     ],
     credentials: true,
   });

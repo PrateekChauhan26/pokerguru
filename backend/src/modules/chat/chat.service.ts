@@ -8,10 +8,10 @@ export class ChatService {
   private readonly logger = new Logger(ChatService.name);
 
   private readonly rejectionMessages = [
-    "I'm PokerGuru, your poker assistant! I can only help with poker-related questions. Feel free to ask me about poker strategies, rules, odds, or any other poker topics! 🃏",
-    "Hi there! I specialize in poker only. Please ask me something about poker - hand rankings, strategies, tournament play, or anything poker-related! 🎰",
-    "I'm here to help with poker questions only! Whether you're curious about Texas Hold'em, Omaha, poker psychology, or bankroll management, I'm your guy! ♠️♥️♦️♣️",
-    "Sorry, I can only assist with poker-related topics. Ask me about poker hands, betting strategies, tournament tips, or any other poker questions! 🃏",
+    "I'm PokerGuru, your poker assistant! I can only help with poker-related questions. Feel free to ask me about poker strategies, rules, odds, or any other poker topics! 0cf",
+    "Hi there! I specialize in poker only. Please ask me something about poker - hand rankings, strategies, tournament play, or anything poker-related! 3b0",
+    "I'm here to help with poker questions only! Whether you're curious about Texas Hold'em, Omaha, poker psychology, or bankroll management, I'm your guy! 660e0f665e0f666e0f663e0f",
+    "Sorry, I can only assist with poker-related topics. Ask me about poker hands, betting strategies, tournament tips, or any other poker questions! 0cf",
   ];
 
   constructor(
@@ -67,7 +67,7 @@ export class ChatService {
       this.logger.error('Error processing message:', error.message);
 
       return {
-        message: "I'm sorry, I'm having some technical difficulties right now. Please try again in a moment! 🤖",
+        message: "I'm sorry, I'm having some technical difficulties right now. Please try again in a moment! 916",
         isPokerRelated: false,
         intentConfidence: 0,
         responseType: 'error',

@@ -27,6 +27,6 @@ async function bootstrap() {
 
   const port = process.env.PORT || 8000;
   await app.listen(port, '0.0.0.0');
-  console.log(`🃏 PokerGuru Backend is running on: http://localhost:${port} or http://192.168.1.3:${port}`);
+  console.log(`f0cf PokerGuru Backend is running on: http://localhost:${port} or http://192.168.1.3:${port}`);
 }
 bootstrap();

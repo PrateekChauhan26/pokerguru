@@ -2,10 +2,6 @@
 
 ## 🎯 System Purpose
 PokerGuru is an AI-powered chatbot system that:
-- Analyzes user questions to determine if they're poker-related
-- Answers poker questions using AI (Ollama llama3.1:8b)
-- Politely rejects non-poker questions
-- Logs all interactions for analysis and improvement
 
 ## 🏗️ Complete Architecture
 
@@ -111,66 +107,39 @@ Every Interaction → Database Entities → PostgreSQL → Analytics/History
 ### Backend Modules
 
 #### 1. **ChatModule** 📞
-- **Purpose**: Main orchestration layer
-- **Responsibilities**:
   - Route messages to appropriate handlers
   - Coordinate intent checking and response generation
   - Handle error scenarios gracefully
-- **Key Files**: `chat.controller.ts`, `chat.service.ts`
 
 #### 2. **IntentCheckerModule** 🔍
-- **Purpose**: Determine if messages are poker-related
-- **Methods**:
   - **Keyword-based**: Fast, rule-based detection
   - **AI-based**: Accurate, context-aware detection
-- **Key Files**: `intent-checker.service.ts`
 
 #### 3. **PokerQAModule** 🎰
-- **Purpose**: Generate poker-specific responses
-- **Features**:
   - Comprehensive poker knowledge base
   - Context-aware prompt engineering
   - Fallback responses for unknown topics
-- **Key Files**: `poker-qa.service.ts`
 
 #### 4. **OllamaIntegrationModule** 🤖
-- **Purpose**: Interface with local AI model
-- **Features**:
   - Health monitoring
   - Error handling and retries
   - Configurable model parameters
-- **Key Files**: `ollama.service.ts`
 
 #### 5. **DatabaseModule** 🗄️
-- **Purpose**: Data persistence and analytics
-- **Entities**:
   - `ChatLog`: Complete conversation history
   - `IntentLog`: Intent detection results
-- **Key Files**: Entity definitions
 
 ### Frontend Components
 
 #### 1. **Main Chat Interface** 💬
-- Real-time messaging UI
-- Poker-themed design with card suits
-- Intent confidence display
-- Message history with timestamps
 
 #### 2. **API Service Layer** 🔌
-- Clean separation between UI and backend
-- Error handling and retry logic
-- TypeScript interfaces for type safety
 
 ## 🚀 Key Features
 
 ### ✅ Intent Detection
-- **Phase 1**: Keyword-based (fast, reliable for common terms)
-- **Phase 2**: AI-based (accurate, context-aware)
-- **Confidence scoring**: Shows detection accuracy
-- **Fallback handling**: Graceful degradation when AI fails
 
 ### ✅ Poker Knowledge System
-- Comprehensive poker expertise covering:
   - Hand rankings and probabilities
   - Strategy and gameplay
   - Tournament vs cash game advice
@@ -178,20 +147,10 @@ Every Interaction → Database Entities → PostgreSQL → Analytics/History
   - Poker psychology
 
 ### ✅ Response Quality
-- **Context-aware prompting**: Specialized prompts for poker
-- **Fallback responses**: When AI is uncertain
-- **Consistent tone**: Friendly, educational poker expert
 
 ### ✅ Data Management
-- **Session tracking**: Maintain conversation context
-- **Complete logging**: All interactions recorded
-- **Analytics ready**: Data structure for insights
 
 ### ✅ User Experience
-- **Real-time feedback**: Typing indicators and loading states
-- **Visual feedback**: Intent confidence display
-- **Responsive design**: Works on desktop and mobile
-- **Error handling**: Clear error messages and recovery
 
 ## 🔧 Configuration & Environment
 
@@ -214,64 +173,30 @@ OLLAMA_MODEL=llama3.1:8b
 ```
 
 ### Dependencies
-- **Backend**: NestJS, TypeORM, PostgreSQL, Axios
-- **Frontend**: React, TypeScript, Axios
-- **AI**: Ollama with llama3.1:8b
-- **Database**: PostgreSQL
 
 ## 🧪 Testing Strategy
 
 ### Automated Tests
-- **Unit Tests**: Individual service methods
-- **Integration Tests**: API endpoints
-- **System Tests**: Complete workflows
 
 ### Manual Testing
-- **Poker Questions**: Validate expert responses
-- **Non-Poker Questions**: Confirm polite rejection
-- **Edge Cases**: Boundary conditions and error handling
 
 ## 📈 Performance Characteristics
 
 ### Response Times
-- **Intent Detection**: ~100ms (keyword) / ~2-5s (AI)
-- **Poker Q&A**: ~3-10s (depending on complexity)
-- **Database Operations**: ~10-50ms
 
 ### Scalability
-- **Horizontal scaling**: Stateless backend design
-- **Database optimization**: Indexed queries
-- **Caching opportunities**: Response caching, intent caching
 
 ## 🔮 Future Enhancements
 
 ### Phase 3 Features
-- Hand history analysis
-- Real-time coaching
-- Tournament tracking
-- Multi-language support
-- Voice interface
-- Advanced analytics dashboard
 
 ### Technical Improvements
-- Redis caching layer
-- WebSocket real-time communication
-- Docker containerization
-- CI/CD pipeline
-- Monitoring and alerting
 
 ## 💡 Development Philosophy
 
 ### Code Quality
-- **Type Safety**: Full TypeScript implementation
-- **Modularity**: Clean separation of concerns
-- **Testability**: Dependency injection and mocking
-- **Documentation**: Comprehensive inline and external docs
 
 ### User-Centric Design
-- **Expertise Focus**: Specialized poker knowledge
-- **Clarity**: Clear intent detection and responses
-- **Reliability**: Robust error handling
-- **Performance**: Optimized for responsive interaction
 
 This architecture provides a solid foundation for a specialized poker chatbot while maintaining flexibility for future enhancements and scaling.
+DB_PORT=5432
